@@ -1,0 +1,143 @@
+@import url('~antd/dist/antd.dark');
+
+:root {
+  --base: #000;
+  --border-color: #434343;
+}
+
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  height: 100%;
+  overflow: auto;
+}
+
+.ant-input:-webkit-autofill,
+.ant-input:-webkit-autofill:hover,
+.ant-input:-webkit-autofill:focus,
+.ant-input:-webkit-autofill:active {
+  background-clip: text;
+  -webkit-text-fill-color: #faffc3;
+  caret-color: #faffc3;
+}
+
+.logo {
+  background-image: url('./logo.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 60px;
+  width: 60px;
+  height: 60px;
+  float: left;
+  image-rendering: optimizeQuality;
+}
+
+.section-tag {
+  position: relative;
+  top: 3px;
+  padding: 0 5px;
+  margin: 2px;
+  border-radius: 3px;
+  float: right;
+}
+
+.section-tag > span > svg {
+  color: var(--base);
+}
+
+.ant-input,
+.ant-form-item-control-input {
+  width: 250px;
+}
+
+.ant-empty-image {
+  margin-bottom: 3px;
+}
+
+.ant-empty-footer {
+  margin-top: 10px;
+}
+
+.ant-modal-body {
+  padding-bottom: 0;
+}
+
+.ant-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flexbox-fix {
+  display: none !important;
+}
+
+.section-modal-color-picker > div > div > div > div > div {
+  background-color: #0000 !important;
+  -webkit-box-shadow: initial !important;
+  box-shadow: initial !important;
+  border-radius: 2px;
+  border: 1px solid var(--border-color);
+}
+
+.compact-picker > div > span > div {
+  -webkit-box-shadow: initial !important;
+  box-shadow: initial !important;
+  border: .5px solid var(--border-color);
+  border-radius: 2px;
+}
+
+.ant-picker,
+.ant-form-item-control-input-content .ant-radio-group-outline {
+  width: 100%;
+}
+
+.ant-form-item-control-input-content .ant-radio-button-wrapper {
+  width: 25%;
+  text-align: center;
+}
+
+.task-modal-subtasks-card {
+  width: 250px;
+  border-color: var(--border-color) !important;
+  margin-bottom: 24px;
+}
+
+.task-modal-subtasks-card > .ant-card-body {
+  padding: 10px;
+}
+
+.task-modal-subtasks-wrapper {
+  max-height: 80px;
+  overflow: scroll;
+  border-color: #0001;
+  margin-bottom: 5px;
+}
+
+.task-modal-subtasks-wrapper > .ant-card-body {
+  padding: 5px;
+}
+
+.task-modal-subtasks-wrapper::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.task-modal-name-input > .ant-input-prefix,
+.task-modal-name-input > .ant-input {
+  font-size: 15px;
+}
+
+.form-item-header {
+  float: left;
+  padding-left: 0;
+  width: 50%;
+}
+
+.form-item-header > .ant-typography {
+  position: relative;
+  bottom: 1px;
+}
