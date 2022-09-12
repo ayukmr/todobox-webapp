@@ -1,16 +1,5 @@
-# nodejs
 node_modules
 .yarn-error.log
 yarn-error.log
 build/
-
-# python
-__pycache__
-
-# xcode
-*.xcuserstate
-project.xcworkspace/
-xcuserdata/
-
-# files
 .DS_Store
