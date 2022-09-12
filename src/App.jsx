@@ -1475,16 +1475,6 @@ class App extends React.Component {
                 overlay={
                   <Menu>
                     <Menu.Item
-                      key="settings"
-                      icon={<SettingOutlined />}
-                      onClick={() => {
-                        message.error('Settings have not been implemented yet.');
-                      }}
-                    >
-                      Settings
-                    </Menu.Item>
-                    <Menu.Divider />
-                    <Menu.Item
                       key="logout"
                       style={{ color: red.primary }}
                       icon={<LogoutOutlined />}
