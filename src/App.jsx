@@ -711,7 +711,7 @@ class App extends React.Component {
             null,
             section: vals.section,
             subtasks: this.state.taskModalSubtasks
-          }
+          };
 
           this.createTaskWithData(newTask);
 
@@ -733,7 +733,7 @@ class App extends React.Component {
             null,
             section: vals.section,
             subtasks: this.state.taskModalSubtasks
-          }
+          };
 
           this.updateTaskWithData(this.state.updateTask.id, newTask);
 
@@ -745,7 +745,7 @@ class App extends React.Component {
     const addSubtask = () => {
       this.subtaskFormRef.current.validateFields()
         .then((vals) => {
-          let newSubtask = { name: vals.name }
+          let newSubtask = { name: vals.name };
           let subtasks = [...this.state.taskModalSubtasks];
 
           subtasks.push(newSubtask);
@@ -948,7 +948,7 @@ class App extends React.Component {
             name: vals.name,
             icon: vals.icon,
             color: this.state.sectionModalColor
-          }
+          };
 
           this.createSectionWithData(newSection);
 
@@ -964,7 +964,7 @@ class App extends React.Component {
             name: vals.name,
             icon: vals.icon,
             color: this.state.sectionModalColor
-          }
+          };
 
           this.updateSectionWithData(this.state.updateSection.id, newSection);
 
