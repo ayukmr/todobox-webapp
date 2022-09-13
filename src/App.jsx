@@ -10,12 +10,12 @@ import {
 } from './firebase';
 
 import {
-  message,    Typography, Divider,    Button,
-  Empty,      Skeleton,   Card,       Layout,
-  Menu,       Modal,      Form,       Tooltip,
-  Popconfirm, Checkbox,   Input,      Radio,
-  Select,     Dropdown,   DatePicker, Progress,
-  Calendar,   Badge,      Spin,       Tag
+  Typography, Divider,    Button,     Empty,
+  Skeleton,   Card,       Layout,     Menu,
+  Modal,      Form,       Tooltip,    Popconfirm,
+  Checkbox,   Input,      Radio,      Select,
+  Dropdown,   DatePicker, Progress,   Calendar,
+  Badge,      Spin,       Tag
 } from 'antd';
 
 import { CompactPicker } from 'react-color';
@@ -25,13 +25,12 @@ import {
   FlagFilled,       FormatPainterOutlined, FileTextOutlined,    FlagOutlined,
   CalendarOutlined, FilterOutlined,        CheckCircleOutlined, SmileOutlined,
   ClearOutlined,    UserOutlined,          LockOutlined,        MailOutlined,
-  SettingOutlined,  LogoutOutlined,        CaretRightOutlined,  CloseOutlined,
-  CodeFilled,
+  LogoutOutlined,   CaretRightOutlined,    CloseOutlined,       CodeFilled,
 
-  ContainerOutlined, PushpinOutlined, ScheduleOutlined,    StarOutlined,
-  BellOutlined,      BugOutlined,     BulbOutlined,        ExperimentOutlined,
-  GiftOutlined,      HomeOutlined,    /* LockOutlined, */  NotificationOutlined,
-  ShoppingOutlined,  RocketOutlined,  ThunderboltOutlined, ToolOutlined,
+  ContainerOutlined, PushpinOutlined,     ScheduleOutlined,     StarOutlined,
+  BellOutlined,      BugOutlined,         BulbOutlined,         ExperimentOutlined,
+  GiftOutlined,      HomeOutlined,        NotificationOutlined, ShoppingOutlined,
+  RocketOutlined,    ThunderboltOutlined, ToolOutlined,
 
   ContainerFilled, PushpinFilled, ScheduleFilled,    StarFilled,
   BellFilled,      BugFilled,     BulbFilled,        ExperimentFilled,
