@@ -72,31 +72,31 @@ const host = 'https://todobox.octalwise.com';
 
 class App extends React.Component {
   state = {
-    token:                     null,
-    fetchingUser:              true,
-    loadingUser:               false,
+    token:        null,
+    fetchingUser: true,
+    loadingUser:  false,
 
-    allTasks:                  [],
-    tasks:                     null,
-    taskModalSubtasks:         [],
+    allTasks:          [],
+    tasks:             null,
+    taskModalSubtasks: [],
 
-    sections:                  null,
-    currentSection:            'all',
-    sectionModalColor:         '#ccc',
-    sectionsCollapsed:         false,
+    sections:          null,
+    currentSection:    'all',
+    sectionModalColor: '#ccc',
+    sectionsCollapsed: false,
 
     taskModalEnabled:          false,
     subtaskModalEnabled:       false,
     sectionModalEnabled:       false,
     passwordResetModalEnabled: false,
 
-    updateTask:                null,
-    updateSection:             null,
-    loggingUp:                 false,
+    updateTask:    null,
+    updateSection: null,
+    loggingUp:     false,
 
-    visibleTaskButtons:        null,
-    visibleSubtasks:           null,
-    visibleSectionButtons:     null,
+    visibleTaskButtons:    null,
+    visibleSubtasks:       null,
+    visibleSectionButtons: null,
   }
 
   taskFormRef          = React.createRef();
