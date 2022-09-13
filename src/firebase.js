@@ -32,13 +32,13 @@ const signUpWithEmail = async (username, email, password) => {
     })
     .catch((err) => {
       switch (err.code) {
-        case 'auth/email-already-in-use':
-          message.error('The entered email is already in use.');
-          break;
+      case 'auth/email-already-in-use':
+        message.error('The entered email is already in use.');
+        break;
 
-        default:
-          console.error(err.code);
-          message.error('An error has occured.');
+      default:
+        console.error(err.code);
+        message.error('An error has occured.');
       }
     });
 }
@@ -50,21 +50,21 @@ const signInWithEmail = async (email, password, persist) => {
         .then((userCredential) => userCredential.user)
         .catch((err) => {
           switch (err.code) {
-            case 'auth/user-not-found':
-              message.error('The entered email is not valid.');
-              break;
+          case 'auth/user-not-found':
+            message.error('The entered email is not valid.');
+            break;
 
-            case 'auth/wrong-password':
-              message.error('The entered email or password is not valid.');
-              break;
+          case 'auth/wrong-password':
+            message.error('The entered email or password is not valid.');
+            break;
 
-            case 'auth/too-many-requests':
-              message.error('Too many attempts have been made. Please try again in a bit.');
-              break;
+          case 'auth/too-many-requests':
+            message.error('Too many attempts have been made. Please try again in a bit.');
+            break;
 
-            default:
-              console.error(err.code);
-              message.error('An error has occured.');
+          default:
+            console.error(err.code);
+            message.error('An error has occured.');
           }
         });
     });

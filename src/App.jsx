@@ -259,36 +259,36 @@ class App extends React.Component {
     }
 
     switch (currentSection) {
-      case 'all':
-        this.setState({ tasks: allTasks });
-        break;
+    case 'all':
+      this.setState({ tasks: allTasks });
+      break;
 
-      case 'today':
-        this.setState({
-          tasks: allTasks.filter((task) => (
-            task.date === moment(moment().format('D M Y'), 'D M Y').unix() * 1000
-          ))
-        });
-        break;
+    case 'today':
+      this.setState({
+        tasks: allTasks.filter((task) => (
+          task.date === moment(moment().format('D M Y'), 'D M Y').unix() * 1000
+        ))
+      });
+      break;
 
-      case 'calendar':
-        this.setState({ tasks: allTasks });
-        break;
+    case 'calendar':
+      this.setState({ tasks: allTasks });
+      break;
 
-      case 'noSection':
-        this.setState({
-          tasks: allTasks.filter((task) => (
-            task.section === null
-          ))
-        });
-        break;
+    case 'noSection':
+      this.setState({
+        tasks: allTasks.filter((task) => (
+          task.section === null
+        ))
+      });
+      break;
 
-      default:
-        this.setState({
-          tasks: allTasks.filter((task) => (
-            task.section === currentSection
-          ))
-        });
+    default:
+      this.setState({
+        tasks: allTasks.filter((task) => (
+          task.section === currentSection
+        ))
+      });
     }
   }
 
@@ -335,45 +335,45 @@ class App extends React.Component {
 
   getSectionIcon(id) {
     switch (id) {
-      case 'all':
-        return <ContainerOutlined />;
+    case 'all':
+      return <ContainerOutlined />;
 
-      case 'today':
-        return <PushpinOutlined />;
+    case 'today':
+      return <PushpinOutlined />;
 
-      case 'calendar':
-        return <ScheduleOutlined />;
+    case 'calendar':
+      return <ScheduleOutlined />;
 
-      case 'noSection':
-        return <FireOutlined />;
+    case 'noSection':
+      return <FireOutlined />;
 
-      default:
-        let sectionIcon = this.getSection(id).icon;
-        let foundIcon = icons.find((icon) => icon.id === sectionIcon);
+    default:
+      let sectionIcon = this.getSection(id).icon;
+      let foundIcon = icons.find((icon) => icon.id === sectionIcon);
 
-        return sectionIcon ? foundIcon.icon : <StarOutlined />;
+      return sectionIcon ? foundIcon.icon : <StarOutlined />;
     }
   }
 
   getFilledSectionIcon(id) {
     switch (id) {
-      case 'all':
-        return <ContainerFilled />;
+    case 'all':
+      return <ContainerFilled />;
 
-      case 'today':
-        return <PushpinFilled />;
+    case 'today':
+      return <PushpinFilled />;
 
-      case 'calendar':
-        return <ScheduleFilled />;
+    case 'calendar':
+      return <ScheduleFilled />;
 
-      case 'noSection':
-        return <FireFilled />;
+    case 'noSection':
+      return <FireFilled />;
 
-      default:
-        let sectionIcon = this.getSection(id).icon;
-        let foundIcon = icons.find((icon) => icon.id === sectionIcon);
+    default:
+      let sectionIcon = this.getSection(id).icon;
+      let foundIcon = icons.find((icon) => icon.id === sectionIcon);
 
-        return sectionIcon ? foundIcon.filled : <StarFilled />;
+      return sectionIcon ? foundIcon.filled : <StarFilled />;
     }
   }
 
