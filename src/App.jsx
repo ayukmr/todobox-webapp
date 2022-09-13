@@ -1385,7 +1385,7 @@ class App extends React.Component {
           }}
         >
           <Content style={{ padding: '25px' }}>
-            {window.location.host === 'localhost:3000' &&
+            {window.location.host.startsWith('localhost:') &&
               <CodeFilled
                 style={{
                   position: 'fixed',
