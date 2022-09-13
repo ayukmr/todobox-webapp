@@ -31,12 +31,9 @@ const signUpWithEmail = async (username, email, password) => {
       })
     })
     .catch((err) => {
-      switch (err.code) {
-      case 'auth/email-already-in-use':
+      if (err.code === 'auth/email-already-in-use') {
         message.error('The entered email is already in use.');
-        break;
-
-      default:
+      } else {
         console.error(err.code);
         message.error('An error has occured.');
       }
