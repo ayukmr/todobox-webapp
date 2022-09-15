@@ -71,6 +71,10 @@ body {
   align-items: center;
 }
 
+.ant-menu-item {
+  margin: 8px 0 !important;
+}
+
 .flexbox-fix {
   display: none !important;
 }
