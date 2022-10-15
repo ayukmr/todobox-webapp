@@ -296,33 +296,33 @@ class App extends React.Component {
     switch (id) {
       case 'all':
         return {
-          id: 'all',
-          name: 'All Tasks',
-          icon: null,
+          id:    'all',
+          name:  'All Tasks',
+          icon:  null,
           color: null
         }
 
       case 'today':
         return {
-          id: 'today',
-          name: 'Today',
-          icon: null,
+          id:    'today',
+          name:  'Today',
+          icon:  null,
           color: null
         }
 
       case 'calendar':
         return {
-          id: 'calendar',
-          name: 'Calendar',
-          icon: null,
+          id:    'calendar',
+          name:  'Calendar',
+          icon:  null,
           color: null
         }
 
       case 'noSection':
         return {
-          id: 'noSection',
-          name: 'No Section',
-          icon: null,
+          id:    'noSection',
+          name:  'No Section',
+          icon:  null,
           color: null
         }
 
@@ -450,15 +450,15 @@ class App extends React.Component {
                 <span
                   style={{
                     position: 'relative',
-                    right: this.state.sectionsCollapsed ? '16px' : '18px',
-                    top: '10px',
+                    right:    this.state.sectionsCollapsed ? '16px' : '18px',
+                    top:      '10px',
                     fontSize: '12px'
                   }}
                 >
                   <UpOutlined
                     style={{
-                      position: 'absolute',
-                      transform: `rotate(${visibleSubtasks === id ? '180' : '0'}deg)`,
+                      position:   'absolute',
+                      transform:  `rotate(${visibleSubtasks === id ? '180' : '0'}deg)`,
                       transition: 'all 0.3s'
                     }}
                     onClick={() => {
@@ -481,7 +481,7 @@ class App extends React.Component {
               {priority !== 4 &&
                 <Text
                   style={{
-                    color: priorityColors[priority-1],
+                    color:  priorityColors[priority-1],
                     margin: '0 -5px 0 -5px'
                   }}
                 >
@@ -560,9 +560,9 @@ class App extends React.Component {
                   <>
                     <Divider
                       style={ index !== 0 ? {
-                        margin: '5px 0 5px 10px',
-                          minWidth: 'calc(100% - 10px)',
-                          width: 'calc(100% - 10px)'
+                        margin:   '5px 0 5px 10px',
+                        minWidth: 'calc(100% - 10px)',
+                        width:    'calc(100% - 10px)'
                       } : { margin: '5px 0' }
                       }
                     />
@@ -703,13 +703,13 @@ class App extends React.Component {
       this.taskFormRef.current.validateFields()
         .then((vals) => {
           let newTask = {
-            name: vals.name,
+            name:        vals.name,
             description: vals.description,
-            priority: vals.priority,
-            date: vals.date !== false ?
-            moment(moment(vals.date).format('D M Y'), 'D M Y').unix() * 1000 :
-            null,
-            section: vals.section,
+            priority:    vals.priority,
+            date: vals.date !== false
+              ? moment(moment(vals.date).format('D M Y'), 'D M Y').unix() * 1000
+              : null,
+            section:  vals.section,
             subtasks: this.state.taskModalSubtasks
           };
 
@@ -724,14 +724,14 @@ class App extends React.Component {
       this.taskFormRef.current.validateFields()
         .then((vals) => {
           let newTask = {
-            completed: this.state.updateTask.completed,
-            name: vals.name,
+            completed:   this.state.updateTask.completed,
+            name:        vals.name,
             description: vals.description,
-            priority: vals.priority,
-            date: vals.date !== false ?
-            moment(moment(vals.date).format('D M Y'), 'D M Y').unix() * 1000 :
-            null,
-            section: vals.section,
+            priority:    vals.priority,
+            date: vals.date !== false
+              ? moment(moment(vals.date).format('D M Y'), 'D M Y').unix() * 1000
+              : null,
+            section:  vals.section,
             subtasks: this.state.taskModalSubtasks
           };
 
@@ -781,18 +781,18 @@ class App extends React.Component {
           initialValues={!updateTask
             ? {
               completed: false,
-              priority: 4,
-              date: currentSection === 'today' && moment(),
-              section: currentSection !== 'all' && currentSection !== 'today' &&
-              currentSection !== 'noSection' ? currentSection : null
+              priority:  4,
+              date:      currentSection === 'today' && moment(),
+              section:   currentSection !== 'all' && currentSection !== 'today' &&
+                currentSection !== 'noSection' ? currentSection : null
             }
             : {
-              completed: updateTask.completed,
-              name: updateTask.name,
+              completed:   updateTask.completed,
+              name:        updateTask.name,
               description: updateTask.description,
-              priority: updateTask.priority,
-              date: updateTask.date !== null && moment(updateTask.date),
-              section: updateTask.section
+              priority:    updateTask.priority,
+              date:        updateTask.date !== null && moment(updateTask.date),
+              section:     updateTask.section
           }}
         >
           <Form.Item
@@ -830,7 +830,7 @@ class App extends React.Component {
           </Text>
           <Form.Item name="priority">
             <Radio.Group>
-              { priorityColors.map((color, index) => (
+              {priorityColors.map((color, index) => (
                 <Radio.Button key={`priorityFlag${index}`} value={index + 1}>
                   <FlagFilled style={{ color: color }} />
                 </Radio.Button>
@@ -883,7 +883,7 @@ class App extends React.Component {
           >
             {this.state.taskModalSubtasks.length > 0 &&
               <Card className="task-modal-subtasks-wrapper">
-                { this.state.taskModalSubtasks.map((subtask, index) => (
+                {this.state.taskModalSubtasks.map((subtask, index) => (
                   <div key={`taskModalSubtask${index}`}>
                     <Text>
                       <CaretRightOutlined />
@@ -945,8 +945,8 @@ class App extends React.Component {
       this.sectionFormRef.current.validateFields()
         .then((vals) => {
           let newSection = {
-            name: vals.name,
-            icon: vals.icon,
+            name:  vals.name,
+            icon:  vals.icon,
             color: this.state.sectionModalColor
           };
 
@@ -961,8 +961,8 @@ class App extends React.Component {
       this.sectionFormRef.current.validateFields()
         .then((vals) => {
           let newSection = {
-            name: vals.name,
-            icon: vals.icon,
+            name:  vals.name,
+            icon:  vals.icon,
             color: this.state.sectionModalColor
           };
 
@@ -1037,9 +1037,9 @@ class App extends React.Component {
             <CompactPicker
               color={this.state.sectionModalColor}
               colors={[
-                '#888888', '#AAAAAA', '#CCCCCC', red[5],  orange[5], yellow[5],
+                '#888888', '#aaaaaa', '#cccccc', red[5],  orange[5], yellow[5],
                 lime[5],   green[5],  cyan[5],   blue[5], purple[5], magenta[5],
-                '#777777', '#999999', '#B0B0B0', red[6],  orange[6], yellow[6],
+                '#777777', '#999999', '#b0b0b0', red[6],  orange[6], yellow[6],
                 lime[6],   green[6],  cyan[6],   blue[6], purple[6], magenta[6],
               ]}
               onChange={(color) => {
@@ -1243,7 +1243,7 @@ class App extends React.Component {
       <Sider
         style={{
           overflow: 'auto',
-          height: '100vh',
+          height:   '100vh',
           position: 'fixed'
         }}
         theme="dark"
@@ -1271,9 +1271,9 @@ class App extends React.Component {
           mode="inline"
           selectedKeys={[this.state.currentSection]}
           onClick={(e) => { e.key !== 'createSection' &&
-              this.setState({
-                currentSection: e.key
-              }, () => this.loadSection());
+            this.setState({
+              currentSection: e.key
+            }, () => this.loadSection());
           }}
         >
           <Menu.Divider />
@@ -1354,7 +1354,7 @@ class App extends React.Component {
 
     return (
       <ul>
-        { dateTasks.map((task) => (
+        {dateTasks.map((task) => (
           <li
             key={`badge${task.id}`}
             style={{ color: priorityColors[task.priority-1] }}
@@ -1389,10 +1389,10 @@ class App extends React.Component {
               <CodeFilled
                 style={{
                   position: 'fixed',
-                  bottom: '10px',
-                  right: '10px',
+                  bottom:   '10px',
+                  right:    '10px',
                   fontSize: '35px',
-                  zIndex: '100'
+                  zIndex:   '100'
                 }}
               />
             }
@@ -1409,9 +1409,11 @@ class App extends React.Component {
                   title={
                     `${tasks?.filter((task) => task.completed).length}/${tasks?.length}`
                   }
-                  color={ tasks?.filter((task) => task.completed).length > 0 ?
-                      tasks?.filter((task) => !task.completed).length === 0 ?
-                      green.primary : blue.primary
+                  color={
+                    tasks?.filter((task) => task.completed).length > 0
+                      ? tasks?.filter((task) => !task.completed).length === 0
+                        ? green.primary
+                        : blue.primary
                       : grey[6]
                   }
                   placement="left"
@@ -1438,10 +1440,11 @@ class App extends React.Component {
 
             <Divider style={{ margin: '0 0 10px 0' }} />
 
-            {currentSection !== 'calendar' ?
-              (tasks
-                ? <this.Tasks />
-                : <Skeleton active={token} />)
+            {
+              currentSection !== 'calendar'
+                ? tasks
+                  ? <this.Tasks />
+                  : <Skeleton active={token} />
                 : <Calendar dateCellRender={this.dateCellTasks} />
             }
 
@@ -1491,7 +1494,7 @@ class App extends React.Component {
                 <Button
                   style={{
                     position: 'absolute',
-                    top: '10px',
+                    top:   '10px',
                     right: '10px'
                   }}
                   type="primary"
