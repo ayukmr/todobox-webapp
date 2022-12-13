@@ -1,4 +1,4 @@
-@import url('~antd/dist/antd.dark');
+@import '~antd/dist/antd.dark';
 
 :root {
   --base: #000;
