@@ -68,7 +68,7 @@ const icons = [
   { id: 'wrench',    name: 'Wrench',       icon: <ToolOutlined         />, filled: <ToolFilled         /> },
 ];
 
-const host = 'https://todobox.octalwise.com';
+const host = 'https://api.todobox.octalwise.com';
 
 class App extends React.Component {
   state = {
@@ -138,7 +138,7 @@ class App extends React.Component {
       return;
     }
 
-    axios.get(`${host}/api/tasks`, { headers: { Authorization: token } })
+    axios.get(`${host}/tasks`, { headers: { Authorization: token } })
       .then((res) => {
         this.setState({ allTasks: res.data }, () => this.loadSection());
       })
@@ -154,7 +154,7 @@ class App extends React.Component {
       return;
     }
 
-    axios.get(`${host}/api/sections`, { headers: { Authorization: token } })
+    axios.get(`${host}/sections`, { headers: { Authorization: token } })
       .then((res) => {
         this.setState({ sections: res.data });
       })
@@ -170,7 +170,7 @@ class App extends React.Component {
       return;
     }
 
-    axios.post(`${host}/api/task`, data, { headers: { Authorization: token } })
+    axios.post(`${host}/task`, data, { headers: { Authorization: token } })
       .then(() => this.getTasks())
       .catch((err) => {
         console.error(err);
@@ -184,7 +184,7 @@ class App extends React.Component {
       return;
     }
 
-    axios.put(`${host}/api/task/${id}`, data, { headers: { Authorization: token } })
+    axios.put(`${host}/task/${id}`, data, { headers: { Authorization: token } })
       .then(() => this.getTasks())
       .catch((err) => {
         console.error(err);
@@ -198,7 +198,7 @@ class App extends React.Component {
       return;
     }
 
-    axios.delete(`${host}/api/task/${id}`, { headers: { Authorization: token } })
+    axios.delete(`${host}/task/${id}`, { headers: { Authorization: token } })
       .then(() => this.getTasks())
       .catch((err) => {
         console.error(err);
@@ -212,7 +212,7 @@ class App extends React.Component {
       return;
     }
 
-    axios.post(`${host}/api/section`, data, { headers: { Authorization: token } })
+    axios.post(`${host}/section`, data, { headers: { Authorization: token } })
       .then(() => this.getSections())
       .catch((err) => {
         console.error(err);
@@ -226,7 +226,7 @@ class App extends React.Component {
       return;
     }
 
-    axios.put(`${host}/api/section/${id}`, data, { headers: { Authorization: token } })
+    axios.put(`${host}/section/${id}`, data, { headers: { Authorization: token } })
       .then(() => this.getSections())
       .catch((err) => {
         console.error(err);
@@ -240,7 +240,7 @@ class App extends React.Component {
       return;
     }
 
-    axios.delete(`${host}/api/section/${id}`, { headers: { Authorization: token } })
+    axios.delete(`${host}/section/${id}`, { headers: { Authorization: token } })
       .then(() => {
         this.setState({
           currentSection: this.state.currentSection === id && 'all'
